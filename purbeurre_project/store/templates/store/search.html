@@ -1,0 +1,75 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+
+{% block header %}
+<header id='name-product'>
+    <div class="container">
+        <h1>{{ user_input }}</h1>
+    </div>
+</header>
+{% endblock %}
+
+
+{% block content %}
+<section>
+    {% if products %}
+        <p id="result-text">
+            Voici les résultats associés à votre recherche. <br> 
+            Veuillez choisir précisément le produit dont vous souhaitez connaître les substituts !
+        </p>
+        <div class="container">
+            <div class="row">
+                {% for product in products %}
+                <div id="space-box" class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                    <a href="{% url 'product_categories' product.id %}">
+                        <div id="product-box">
+                            <div class='nutriscore-position'>
+                                {% if product.nutrition_grade == 'a' %}
+                                    <img  class="nutri-grade" src="{% static 'store/assets/img/portfolio/nutriscore_solo/a.png' %}" alt="">
+                                {% endif %}
+                                {% if product.nutrition_grade == 'b' %}
+                                    <img  class="nutri-grade" src="{% static 'store/assets/img/portfolio/nutriscore_solo/b.png' %}" alt="">
+                                {% endif %}
+                                {% if product.nutrition_grade == 'c' %}
+                                    <img  class="nutri-grade" src="{% static 'store/assets/img/portfolio/nutriscore_solo/c.png' %}" alt="">
+                                {% endif %}
+                                {% if product.nutrition_grade == 'd' %}
+                                    <img  class="nutri-grade" src="{% static 'store/assets/img/portfolio/nutriscore_solo/d.png' %}" alt="">
+                                {% endif %}
+                                {% if product.nutrition_grade == 'e' %}
+                                    <img  class="nutri-grade" src="{% static 'store/assets/img/portfolio/nutriscore_solo/e.png' %}" alt="">
+                                {% endif %}
+                            </div>
+                            <img src={{ product.image }} alt={{ product.name }}>
+                            <br><span id='prod-name'>{{ product.name }}</span>
+                        </div>
+                    </a>
+                </div> 
+                {% endfor %}
+            </div>
+        </div>
+        {% if paginate %}
+        <nav class='page'>
+            <div class="pagination">
+                {% if products.has_previous %}
+                    <a href="?user_input={{ user_input }}&page={{ products.previous_page_number }}">❮</a>
+                {% endif %}
+                {% if products.has_next %}
+                    <a href="?user_input={{ user_input }}&page={{ products.next_page_number }}">❯</a>
+                {% endif %}
+            </div> 
+        </nav>
+        {% endif %}
+    {% else %}
+        <p id="result-text">
+            Aucun résultat associé à votre recherche...
+        </p>
+    {% endif %}
+</section>
+{% endblock %}
+
+
+{% block othersections %} 
+
+{% endblock %}

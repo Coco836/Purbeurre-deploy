@@ -1,0 +1,32 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+
+{% block header %}
+<header id='name-product'>
+    <div class="container">
+        <h2>{{product.name}}</h2>
+        <img id='image-header' src="{{ product.image }}" alt="">
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section>
+    <p id="result-text">
+        Voici les catégories associées au produit choisi. <br> 
+        Veuillez choisir la catégorie dont vous voulez voir les substituts du produit !
+    </p>
+    <div class='container'>
+        <div id='categories-name'>
+            <ul id='categories'>
+                <br>
+                {% for category in categories %}
+                    <li><a href="{% url 'listing_substitutes' product.id category.id %}">{{ category.name }}</a></li> <br>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
+</section>
+{% endblock %}

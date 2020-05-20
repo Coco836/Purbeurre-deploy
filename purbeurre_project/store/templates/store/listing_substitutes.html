@@ -1,0 +1,65 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+
+{% block header %}
+<header id='name-product'>
+    <div class="container">
+        <h2>{{product.name}}</h2>
+        <img id='image-header' src="{{ product.image }}" alt="">
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section>
+    {% if product_substitutes %}
+        <p id="result-text">
+            Si vous voulez en savoir plus sur un de ces produits, veuillez cliquez dessus !  <br> 
+            Vous pouvez remplacer l'aliment '{{ product.name }}' dans la catégorie '{{ category.name }}' par :
+        </p>
+        <div class="container">
+            <div class="row">
+                {% for substitute in product_substitutes %}
+                <div id="space-box" class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                    <div id="product-box">
+                        <div class='nutriscore-position'>
+                            {% if substitute.nutrition_grade == 'a' %}
+                            <img  class="nutri-grade" src="{% static 'store/assets/img/portfolio/nutriscore_solo/a.png' %}" alt="">
+                            {% endif %}
+                            {% if substitute.nutrition_grade == 'b' %}
+                                <img  class="nutri-grade" src="{% static 'store/assets/img/portfolio/nutriscore_solo/b.png' %}" alt="">
+                            {% endif %}
+                            {% if substitute.nutrition_grade == 'c' %}
+                                <img  class="nutri-grade" src="{% static 'store/assets/img/portfolio/nutriscore_solo/c.png' %}" alt="">
+                            {% endif %}
+                            {% if substitute.nutrition_grade == 'd' %}
+                                <img  class="nutri-grade" src="{% static 'store/assets/img/portfolio/nutriscore_solo/d.png' %}" alt="">
+                            {% endif %}
+                            {% if substitute.nutrition_grade == 'e' %}
+                                <img  class="nutri-grade" src="{% static 'store/assets/img/portfolio/nutriscore_solo/e.png' %}" alt="">
+                            {% endif %}
+                        </div>
+
+                        <img src={{ substitute.image }} alt={{ substitute.name }}>
+                        <a href="/store/substitute_details/{{ substitute.name }}">
+                            <br><span id='prod-name'>{{ substitute.name }}</span>
+                        </a>
+                        {% if user.is_authenticated %}
+                        <form action="{% url 'favorite' substitute.id %}" method="POST">
+                            {% csrf_token %}
+                            <button class='save-button' name='button-save' type='submit'><i id='save' class="far fa-save" aria-hidden="true"></i> Sauvegarder</button>
+                        </form>
+                        {% endif %}
+                    </div>
+                </div> 
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+    <p id="result-text">
+        Ce produit ne possède aucun substitut dans cette catégorie.
+    </p>
+    {% endif %}
+</section>
+{% endblock %}

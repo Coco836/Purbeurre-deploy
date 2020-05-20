@@ -1,0 +1,25 @@
+{% extends 'account/base.html' %}
+{% load static %}
+
+
+{% block header %}
+<header id='valid-header'>
+    <div class="container">
+        <h1>Bonjour {{user.first_name}} !</h1>
+    </div>
+</header>
+{% endblock %}
+
+
+{% block content %}
+<section class="semail-account-section">
+    <div id="email-account">
+        <p>{{user.email}}</p>
+    </div>
+</section>
+{% endblock %}
+
+
+{% block othersections %} 
+
+{% endblock %}
