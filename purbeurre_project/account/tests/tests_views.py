@@ -1,7 +1,6 @@
 # Import
 from django.test import TestCase, Client
 from django.urls import reverse
-from account.forms import UserForm
 from store.models import Product
 from django.contrib.auth.models import User
 
@@ -144,77 +143,3 @@ class TestViews(TestCase):
         response = self.client.get(reverse('saved_food'))
         self.assertEqual(User.products.through.objects.all().count(), 1)
         self.assertTemplateUsed(response, 'account/saved_food.html')
-
-
-class TestForms(TestCase):
-    ''' Class test for the form in of the application 'account'.'''
-
-    def setUp(self):
-        '''
-            Create test records once to access them in
-            every test method in the test class.
-        '''
-        self.client = Client()
-        self.data = {
-                     'username': 'fred',
-                     'last_name': 'Sacquet',
-                     'first_name': 'Frodon',
-                     'email': 'frodon@sacquet.fr',
-                     'password': 'test',
-        }
-
-    def test_user_form_valid_data(self):
-        ''' Test the validity of the data entered by the user.'''
-        form = UserForm(self.data)
-        self.assertTrue(form.is_valid())
-
-    def test_user_form_no_data(self):
-        ''' Test the non validity of the data entered by the user.'''
-        form = UserForm(data={})
-        self.assertFalse(form.is_valid())
-        self.assertEquals(len(form.errors), 5)
-
-    def test_email_is_unique(self):
-        ''' Test validity of the email when user try to sign-up. '''
-        self.client.post(reverse('sign_up'), self.data)
-        response = self.client.post(reverse('sign_up'), self.data)
-        # Check if error appears as it should
-        self.assertContains(response, 'Cette adresse email existe déjà !')
-
-    def test_username_is_unique(self):
-        ''' Test validity of the username when user try to sign-up. '''
-        self.client.post(reverse('sign_up'), self.data)
-        response = self.client.post(reverse('sign_up'), self.data)
-        # Check if error appears as it should
-        self.assertContains(response, 'utilisateur existe déjà')
-
-
-class TestModels(TestCase):
-    ''' Class test for the django model User of the application 'account'.'''
-
-    def setUp(self):
-        '''
-            Create test records once to access them in
-            every test method in the test class.
-        '''
-        self.data = {
-                    'id': 1,
-                    'username': 'fred',
-                    'last_name': 'Sacquet',
-                    'first_name': 'Frodon',
-                    'email': 'frodon@sacquet.fr',
-                    'password': 'test',
-        }
-
-    def test_user_fields(self):
-        ''' Test the existence of the user in database.'''
-        user = User()
-        user.username = "Username test"
-        user.last_name = "Last name test"
-        user.first_name = "First name test"
-        user.email = "Email@test.fr"
-        user.password = "Password test"
-        user.save()
-
-        response = User.objects.get(email=user.email)
-        self.assertEqual(response, user)
