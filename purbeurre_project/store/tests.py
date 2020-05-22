@@ -11,8 +11,6 @@ from io import StringIO
 from django.core.management import call_command
 from store.api import OpenFoodFactsApi
 from django.contrib.auth.models import User
-from django.test import RequestFactory
-from django.core.paginator import EmptyPage
 
 # Create your tests here.
 

@@ -82,8 +82,10 @@ def listing_substitutes(request, product_id, category_id):
 def substitute_details(request, substitute_name):
     ''' View that send substitute details. '''
     substitute = Product.objects.get(name=substitute_name)
+    shops = substitute.shops.all()
     context = {
         'substitute': substitute,
+        'shops': shops
     }
     return render(request, 'store/substitute_details.html', context)
 
