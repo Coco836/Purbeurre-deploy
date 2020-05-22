@@ -2,15 +2,7 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from account.forms import UserForm
-from account import forms
-from django.core.exceptions import ValidationError
-from store.models import Product, Category
-from django.contrib.auth.hashers import (
-                                        make_password,
-                                        is_password_usable,
-                                        check_password
-)
-from django.contrib.sessions.models import Session
+from store.models import Product
 from django.contrib.auth.models import User
 
 
@@ -93,7 +85,7 @@ class TestViews(TestCase):
 
     def test_my_account(self):
         '''
-            Test that template 'my_account' appears 
+            Test that template 'my_account' appears
             when the user has successfully logged in.
         '''
         User.objects.create_user(**self.data)
@@ -115,7 +107,7 @@ class TestViews(TestCase):
                                     }
         )
         try:
-            user = User.objects.get(username='someusername')
+            User.objects.get(username='someusername')
         except User.DoesNotExist:
             self.assertRaises(User.DoesNotExist)
             self.assertTemplateUsed(response, 'registration/login.html')
@@ -132,7 +124,6 @@ class TestViews(TestCase):
                             username=self.login_data['username'],
                             password=self.login_data['password']
         )
-        user = User.objects.get(username=self.login_data['username'])
         # Check if the user n°6 is currently logged in
         self.assertEqual('6', self.client.session.get('_auth_user_id'))
         response = self.client.get('/account/logout/?next=/')
@@ -143,7 +134,7 @@ class TestViews(TestCase):
     def test_saved_food(self):
         ''' Test if the products saved as favorite exist in database. '''
         User.objects.create_user(**self.data)
-        request = self.client.login(
+        self.client.login(
                                     username=self.login_data['username'],
                                     password=self.login_data['password']
         )

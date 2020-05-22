@@ -5,8 +5,6 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from store.models import Category, Product, Shop
 from unittest import mock
-from unittest.mock import patch
-from store.management.commands import init_categories, init_products
 from io import StringIO
 from django.core.management import call_command
 from store.api import OpenFoodFactsApi
@@ -176,14 +174,23 @@ class TestViews(TestCase):
         substitute = Product.objects.create(**self.data_product)
         category = Category.objects.create(**self.data_category)
         substitute.categories.add(category)
-        user = User.objects.get_by_natural_key(self.login_data['username'])
         # Add the link between a user and the product he saved
-        response = self.client.post(reverse('favorite', args=[substitute.id]), HTTP_REFERER=reverse(
+        response = self.client.post(
+                                    reverse(
+                                            'favorite',
+                                            args=[substitute.id]
+                                    ),
+                                    HTTP_REFERER=reverse(
                                             'listing_substitutes',
                                             args=[substitute.id, category.id]
-                                    ),)
+                                    ),
+        )
         self.assertEqual(User.products.through.objects.all().count(), 1)
-        self.assertRedirects(response, f'/store/listing_substitutes/{substitute.id}/{category.id}/')
+        self.assertRedirects(
+                            response,
+                            '/store/listing_substitutes/'
+                            f'{substitute.id}/{category.id}/'
+        )
 
     def test_delete_substitute(self):
         ''' Test the delete favorite functionality. '''
@@ -194,11 +201,16 @@ class TestViews(TestCase):
         )
         substitute = Product.objects.create(**self.data_product)
         substitute.users.add(self.user)
-        user = User.objects.get_by_natural_key(self.login_data['username'])
         self.assertEqual(User.products.through.objects.all().count(), 1)
         # Remove the link of the user with the choosen product
-        response = self.client.post(reverse('favorite_delete', args=[substitute.id]), HTTP_REFERER=reverse(
-                                            'saved_food'),
+        response = self.client.post(
+                                    reverse(
+                                            'favorite_delete',
+                                            args=[substitute.id]
+                                    ),
+                                    HTTP_REFERER=reverse(
+                                            'saved_food'
+                                    ),
         )
         self.assertEqual(User.products.through.objects.all().count(), 0)
         self.assertRedirects(response, '/account/saved_food/')

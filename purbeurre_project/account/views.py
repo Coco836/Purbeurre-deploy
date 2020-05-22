@@ -2,7 +2,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template import loader
-from django.contrib.auth.hashers import check_password
 from django.contrib.auth.models import User
 from store.models import Product
 from .forms import UserForm
@@ -71,7 +70,7 @@ def login_view(request):
         # Send back the user to the current page if the data are not valid
         if user is None:
             return render(request, 'registration/login.html', context)
-        # Login user if the data are valid 
+        # Login user if the data are valid
         login(request, user)
         return render(request, 'account/my_account.html')
 

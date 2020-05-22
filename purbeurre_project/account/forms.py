@@ -1,6 +1,5 @@
 # Import
 from django import forms
-from django.forms import TextInput, EmailInput
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 

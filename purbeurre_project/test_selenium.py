@@ -3,14 +3,13 @@ from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium.webdriver.firefox.webdriver import WebDriver
 from django.urls import reverse
 from store.models import Product, Category
-from django.contrib.auth.models import User
 
 
 # Create your tests here.
 
 
 class MySeleniumTests(StaticLiveServerTestCase):
-    
+
     def setUp(self):
         self.data_product = {
             'name': 'nutella',
@@ -76,7 +75,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         self.selenium.get('%s%s' % (self.live_server_url, reverse('home')))
         self.selenium.find_element_by_id("product").send_keys('nutella')
         self.selenium.find_element_by_id('btn-accueil').click()
-    
+
     def test_3_add_favorite(self):
         # Sign-up and log-in user
         self.selenium.get('%s%s' % (self.live_server_url, reverse('sign_up')))
@@ -113,9 +112,5 @@ class MySeleniumTests(StaticLiveServerTestCase):
         self.selenium.find_element_by_name("button-save").click()
         self.selenium.get('%s%s' % (
                                     self.live_server_url,
-                                    reverse('saved_food'))
-        )
-
-
-
-
+                                    reverse('saved_food')
+                                    ))

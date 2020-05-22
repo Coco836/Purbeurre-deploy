@@ -2,10 +2,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template import loader
-from .models import Category, Product, Shop
-from django.contrib.auth.models import User
-from .api import OpenFoodFactsApi
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from .models import Category, Product
+from django.core.paginator import Paginator, EmptyPage
 from django.contrib.auth.decorators import login_required
 import logging
 logger = logging.getLogger('Pur Beurre')
@@ -31,7 +29,7 @@ def search(request):
         # Set page number when PageIsNotAnInteger
         try:
             page = int(request.GET.get('page'))
-        except:
+        except Exception:
             page = 1
         # Send to last page with products when next page is Empty
         try:
@@ -116,4 +114,3 @@ def delete_substitute(request, substitute_id):
 def mention(request):
     ''' View that render template. '''
     return render(request, 'store/mention.html')
-
