@@ -75,17 +75,6 @@ input#search.form-control {
     background-color: rgba(76, 99, 55, 0.411);
     color: rgba(226, 219, 219, 0.651);
 }
-
-#about h2 {
-    color: rgb(235, 234, 228);
-    text-align: center;
-    font-family: "Open Sans", sans-serif;
-}
-
-section#about.page-section {
-    background-color: rgba(76, 99, 55, 0.411);
-}
-
 html, body {
     height: 100%;
     padding: 0;
@@ -174,15 +163,15 @@ svg#contact-phone, svg#contact-email {
 }
 
 #menu-account path {
-    color: #dc35457a;
+    color: #c45525ab;
 }
 
 #menu-deconnect path {
-    color: #dc35457a;
+    color: #c45525ab;
 }
 
 #menu-food path {
-    color: #dc35457a; 
+    color: #c45525ab; 
 }
 
 header#sign-up-header, header#valid-header {
@@ -196,7 +185,14 @@ header#sign-up-header, header#valid-header {
     text-align: center;
 }
 header#sign-up-header h1, header#valid-header h1 {
-    color: #9cb5c7;
+    color: #de944082;;
+}
+
+@media (max-width: 992px) {
+    header#sign-up-header, header#valid-header {
+        padding-top: 6rem;
+        padding-bottom: 2rem;
+    }
 }
 
 div#signup-container {
@@ -247,7 +243,7 @@ form.register-form {
 
 .signup-image-link {
     font-size: 17px;
-    color: #343a40ba;
+    color: #e8a75dbf;
     text-decoration: underline;
     display: block;
     text-align: center;
@@ -261,6 +257,7 @@ h2.form-title {
     margin: auto;
     padding-bottom: 3rem;
     padding-top: 3rem;
+    color: #345A61;
 }
 
 .form-group input {
@@ -304,23 +301,6 @@ span.error-input, p.error-input {
     color: #dc3545c7;
 }
 
-div#email-account {
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
-    padding: 0.5rem;
-    margin-top: 2rem;
-    border-radius: 13px 13px 13px 13px;
-    -moz-border-radius: 13px 13px 13px 13px;
-    -webkit-border-radius: 7px 7px 7px 7px;
-    border: 4px solid #9cc7ba;
-}
-div#email-account p {
-    margin-top: 0;
-    margin-bottom: 0rem;
-    font-size: larger;
-}
-
 span.connection-link a {
     color: #17a2b8;
 }
@@ -332,16 +312,13 @@ div.dropdown-menu {
 
 p#result-text {
     text-align: center;
-    color: #b5922b;
+    color: #345A61;
     font-style: italic;
     font-size: larger;
 }
 
 div#product-box {
-    border-radius: 6px 6px 6px 6px;
-    -moz-border-radius: 6px 6px 6px 6px;
-    -webkit-border-radius: 6px 6px 6px 6px;
-    border: 1px solid #65b89b;
+    border: 1px solid #e8a75da6;
     text-align: center;
     height: 22rem;
     width: 18rem;
@@ -354,11 +331,6 @@ div#product-box {
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
-
-/* .space-product {
-    display: flex;
-    justify-content: space-evenly;
-} */
 
 div#product-box img{
     width: 8rem;
@@ -374,7 +346,7 @@ header#name-favorite {
     background-attachment: scroll;
     background-size: cover;
     text-align: center;
-    color: #9cb5c7;
+    color: #de944082;;
 }
 
 #prod-name {
@@ -385,15 +357,15 @@ header#name-favorite {
 
 p#no-result {
     text-align: center;
-    color: #b5922b;
+    color: #345A61;
     font-style: italic;
     font-size: larger;
 }
 
 button.delete-button {
-    background-color: #aaba0045;
+    background-color: #e8a75da6;
     color: black;
-    border: 2px solid #aaba0045; 
+    border: 2px solid #f8f8f8; 
 }
 
 @media (max-width: 991px) {
@@ -428,3 +400,34 @@ button.delete-button {
         margin-top: 2rem;
     }
 }
+
+#footer-section div a {
+    color: #6c757d !important;;
+}
+
+label {
+    color: #345A61
+}
+
+div.acc-content {
+    display: flex;
+    background: white;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    text-align: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p#acc-style {
+    padding: 3rem;
+}
+
+p#acc-style span {
+    color: #345A61;
+}
+

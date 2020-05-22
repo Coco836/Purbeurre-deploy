@@ -9,5 +9,6 @@ urlpatterns = [
     path(r'substitute_details/<str:substitute_name>/', views.substitute_details, name='substitute_details'),
     path(r'favorite/<int:substitute_id>/', views.save_product, name='favorite'),
     path(r'delete/<int:substitute_id>/', views.delete_substitute, name='favorite_delete'),
+    path(r'mention/', views.mention, name='mention')
 
 ]

@@ -83,8 +83,13 @@
         <!-- Footer-->
         <footer>
             <div id="footer-section" class="container">
-                <div class="small text-left text-muted">Mentions légales</div>
-                <div class="small text-right text-muted">Contact</div></div>
+                <div class="small text-left text-muted">
+                    <a href="{% url 'mention' %}">Mentions légales</a>
+                </div>
+                <div class="small text-right text-muted">
+                    <a class="contact-color" href="/#services">Contact</a>
+                </div>
+            </div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

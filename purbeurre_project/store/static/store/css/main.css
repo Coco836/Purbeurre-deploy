@@ -27,7 +27,7 @@ header.masthead h2 {
     header.masthead h2 {
         font-size: 2rem;
         margin-top: -6rem;
-        color: rgba(181, 244, 58, 0.54);
+        color: #c45525f2;
     }
 }
 
@@ -83,7 +83,7 @@ input#search.form-control {
 }
 
 section#about.page-section {
-    background-color: rgba(76, 99, 55, 0.411);
+    background-color: #345a6180;
 }
 
 html, body {
@@ -173,18 +173,6 @@ svg#contact-phone, svg#contact-email {
     margin-bottom: 1rem;
 }
 
-#menu-account path {
-    color: #dc35457a;
-}
-
-#menu-deconnect path {
-    color: #dc35457a;
-}
-
-#menu-food path {
-    color: #dc35457a; 
-}
-
 header#sign-up-header, header#valid-header {
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -196,7 +184,7 @@ header#sign-up-header, header#valid-header {
     text-align: center;
 }
 header#sign-up-header h1, header#valid-header h1 {
-    color: #9cb5c7;
+    color: #de944082;;
 }
 
 div#signup-container {
@@ -332,16 +320,13 @@ div.dropdown-menu {
 
 p#result-text {
     text-align: center;
-    color: #b5922b;
+    color: #345A61;
     font-style: italic;
     font-size: larger;
 }
 
 div#product-box {
-    border-radius: 6px 6px 6px 6px;
-    -moz-border-radius: 6px 6px 6px 6px;
-    -webkit-border-radius: 6px 6px 6px 6px;
-    border: 1px solid #65b89b;
+    border: 1px solid #e8a75da6;
     text-align: center;
     height: 22rem;
     width: 18rem;
@@ -402,7 +387,7 @@ header#name-substitute, header#name-product {
     background-attachment: scroll;
     background-size: cover;
     text-align: center;
-    color: #9cb5c7;
+    color: #de944082;;
 }
 
 img#image-header {
@@ -448,9 +433,9 @@ nav.page {
 
 
 button.save-button {
-    background-color: #aaba0045;
+    background-color: #e8a75da6;
     color: black;
-    border: 2px solid #aaba0045; 
+    border: 2px solid #f8f8f8; 
 }
 
 @media (max-width: 991px) {
@@ -478,7 +463,7 @@ form.input-group {
 header.masthead h2 {
     padding-bottom: 1rem;
     font-size: 2rem;
-    color: rgba(181, 244, 58, 0.54);
+    color: #c45525f2;
 }
 
 header.masthead h1 {
@@ -540,4 +525,64 @@ div.description-subs {
     margin-right: 10%;
     text-align: center;
     margin-top: 1rem;
+}
+
+#footer-section div a {
+    color: #6c757d !important;
+}
+
+header#mention-header {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background: linear-gradient(to bottom, rgba(66, 79, 92, 0.69) 0%, rgba(66, 77, 92, 0.68) 100%), url(../assets/img/portfolio/account/sign_up_head.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    text-align: center;
+}
+header#mention-header h1 {
+    color: #de944082;
+}
+
+@media (max-width: 992px) {
+    header#mention-header {
+        padding-top: 6rem;
+        padding-bottom: 2rem;
+    }
+}
+
+div#mention-container {
+    width: 100%;
+    max-width: 58rem;
+}
+    
+div.mention-content {
+    display: flex;
+    width: 100%;
+    background: white;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+}
+
+p#mention-style {
+    margin: 3rem;
+}
+
+
+p#mention-style span {
+    color: #345A61;
+}
+
+@media (max-width: 992px) {
+    p#mention-style {
+        margin: 1rem;
+    }
+}
+
+svg#menu-account, li a.aliment svg, li a.deconnection svg {
+    color: #c45525ab
 }

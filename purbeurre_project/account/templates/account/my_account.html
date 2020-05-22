@@ -12,9 +12,21 @@
 
 
 {% block content %}
-<section class="semail-account-section">
-    <div id="email-account">
-        <p>{{user.email}}</p>
+<section class="acc-section">
+    <div id="acc-container" class="container">
+        <div class="acc-content">
+            <p id='acc-style'>
+                <span><strong>Vos informations</strong></span> <br><br>
+                <span>Nom d'utilisateur: </span> {{ user.username }} <br>
+                <span>Nom:</span> {{ user.last_name }} <br>
+                <span>Prénom:</span> {{ user.first_name }} <br>
+                <span>Mail:</span> {{ user.email }} <br><br>
+                <a class="aliment" href="{% url 'saved_food' %}">
+                    <span>Accéder à vos favoris !</span>
+                </a>
+
+            </p>
+        </div>
     </div>
 </section>
 {% endblock %}

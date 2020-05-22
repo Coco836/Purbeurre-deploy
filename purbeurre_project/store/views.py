@@ -109,3 +109,9 @@ def delete_substitute(request, substitute_id):
     substitute.users.remove(user)
     # Redirect to current page
     return redirect(request.META.get('HTTP_REFERER'))
+
+
+def mention(request):
+    ''' View that render template. '''
+    return render(request, 'store/mention.html')
+

@@ -22,7 +22,7 @@
             <ul id='categories'>
                 <br>
                 {% for category in categories %}
-                    <li><a href="{% url 'listing_substitutes' product.id category.id %}">{{ category.name }}</a></li> <br>
+                    <li><a id="category-search" href="{% url 'listing_substitutes' product.id category.id %}">{{ category.name }}</a></li> <br>
                 {% endfor %}
             </ul>
         </div>

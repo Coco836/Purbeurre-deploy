@@ -205,6 +205,13 @@ class TestViews(TestCase):
         self.assertEqual(User.products.through.objects.all().count(), 0)
         self.assertRedirects(response, '/account/saved_food/')
 
+    def test_mention(self):
+        ''' Test if mention page is well displayed'''
+        response = self.client.get(reverse('mention'))
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'store/mention.html')
+        self.assertContains(response, "Mentions légales")
+
 
 class TestModels(TestCase):
     ''' Class test for the models of the application 'store'.'''
