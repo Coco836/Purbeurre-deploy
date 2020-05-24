@@ -1,0 +1,62 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+
+{% block header %}
+<header id='name-substitute'>
+    <div class="container">
+        <img id='image-header' src="{{ substitute.image }}" alt="">
+        <h2>{{substitute.name}}</h2>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section>
+    <div class="block-container">
+        <div class='block1'>
+            {% if substitute.nutrition_grade == 'a' %}
+                <img class="nutriscore" src="{% static 'store/assets/img/portfolio/nutriscore/a.png' %}" alt="">
+            {% endif %}
+            {% if substitute.nutrition_grade == 'b' %}
+                <img class="nutriscore" src="{% static 'store/assets/img/portfolio/nutriscore/b.png' %}" alt="">
+            {% endif %}
+            {% if substitute.nutrition_grade == 'c' %}
+                <img class="nutriscore" src="{% static 'store/assets/img/portfolio/nutriscore/c.png' %}" alt="">
+            {% endif %}
+            {% if substitute.nutrition_grade == 'd' %}
+                <img class="nutriscore" src="{% static 'store/assets/img/portfolio/nutriscore/d.png' %}" alt="">
+            {% endif %}
+            {% if substitute.nutrition_grade == 'e' %}
+                <img class="nutriscore" src="{% static 'store/assets/img/portfolio/nutriscore/e.png' %}" alt="">
+            {% endif %}
+        </div>
+        <div class='block2'>
+            <p>Repères nutritionnels pour 100g</p>
+        </div>
+    </div>
+    <div class='description-subs'>
+        {% if substitute.description %}
+        <p>
+           <strong>Description du produit :</strong> {{ substitute.description }}
+        </p>
+        {% endif %}
+    </div>
+    <div class='description-subs'>
+        {% if shops %}
+        <p>
+           <strong>Où trouver ce produit :</strong> 
+            {% for shop in shops %} 
+                {{ shop.name }},
+            {% endfor %}
+        </p>
+        {% endif %}
+    </div>
+
+    <div class='box-off'>
+        <a href="{{ substitute.url }}" target="blank">
+            <p>Voir la fiche d'OpenFoodFacts</p>
+        </a>
+    </div>
+</section>
+{% endblock %}

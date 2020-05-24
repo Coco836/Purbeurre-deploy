@@ -1,0 +1,37 @@
+{% extends 'account/base.html' %}
+{% load static %}
+
+
+{% block header %}
+<header id='valid-header'>
+    <div class="container">
+        <h1>Bonjour {{user.first_name}} !</h1>
+    </div>
+</header>
+{% endblock %}
+
+
+{% block content %}
+<section class="acc-section">
+    <div id="acc-container" class="container">
+        <div class="acc-content">
+            <p id='acc-style'>
+                <span><strong>Vos informations</strong></span> <br><br>
+                <span>Nom d'utilisateur: </span> {{ user.username }} <br>
+                <span>Nom:</span> {{ user.last_name }} <br>
+                <span>Prénom:</span> {{ user.first_name }} <br>
+                <span>Mail:</span> {{ user.email }} <br><br>
+                <a class="aliment" href="{% url 'saved_food' %}">
+                    <span>Accéder à vos favoris !</span>
+                </a>
+
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
+{% block othersections %} 
+
+{% endblock %}

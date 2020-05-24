@@ -1,0 +1,22 @@
+{% extends 'account/base.html' %}
+{% load static %}
+
+
+{% block header %}
+<header id='sign-up-header'>
+    <div class="container">
+        <h1>Vous êtes inscrit !</h1>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="signup-validation">
+        <h3>Bienvenue sur la plateforme Pur Beurre</h3> <br>
+        <p>Votre inscription s'est déroulée à merveille. <br>
+            Merci pour l'intérêt porté !</p>
+            <span class="connection-link"><a href="{% url 'login' %}"> Veuillez cliquez ici pour vous connecter à votre compte.</a></span>
+    </div>
+</div>
+{% endblock %}

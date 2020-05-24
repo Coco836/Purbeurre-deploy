@@ -1,0 +1,41 @@
+{% extends 'account/base.html' %}
+{% load static %}
+
+
+{% block header %}
+<header id='name-favorite'>
+    <div class="container">
+        <h2>Mes produits favoris</h2>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row">
+            {% if list_saved_substitutes %}
+                {% for saved_food in list_saved_substitutes %}
+                    {% for saved in saved_food %}
+                        <div id="space-box" class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                            <div id="product-box"><img src={{ saved.image }} alt={{ saved.name }}>
+                                <a href="{% url 'substitute_details' saved.name %}">
+                                    <br><span id='prod-name'>{{ saved.name }}</span>
+                                </a>
+                                <form action="{% url 'favorite_delete' saved.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button class="delete-button" name='button-save' type='submit'><i id='save' class="far fa-save" aria-hidden="true"></i> Supprimer des favoris</button>
+                                </form>        
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            {% else %}
+            <div class='container'>
+                <p id='no-result'>Vous n'avez aucun favoris.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}
