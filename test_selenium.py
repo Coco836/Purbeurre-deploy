@@ -69,6 +69,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         self.selenium.find_element_by_xpath(
                                             '//input[@value="Se connecter"]'
                                             ).click()
+        self.selenium.find_elements_by_class_name("aliment")[0].click()
 
     def test_2_search(self):
         Product.objects.create(**self.data_product)
