@@ -23,7 +23,9 @@ def search(request):
 
     if user_input_query != '' and user_input_query is not None:
         # Search for products containing the user input in database
-        query_set = query_set.filter(name__icontains=user_input_query)
+        query_set = query_set.filter(
+                                name__icontains=user_input_query
+        ).order_by('id')
         # Set maximum number of products per page
         paginator = Paginator(query_set, 9)
         # Set page number when PageIsNotAnInteger
