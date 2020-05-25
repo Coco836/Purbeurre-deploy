@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template import loader
 from django.contrib.auth.models import User
-from store.models import Product
+from purbeurre_project.store.models import Product
 from .forms import UserForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate, logout
