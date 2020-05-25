@@ -1,1 +1,7 @@
 env/
+purbeurre_project/purbeurre_project/__pycache__
+purbeurre_project/purbeurre_project/store/__pycache__/
+purbeurre_project/purbeurre_project/store/management/
+purbeurre_project/purbeurre_project/store/migrations/__pycache__/
+purbeurre_project/purbeurre_project/account/__pycache__/
+purbeurre_project/purbeurre_project/account/migrations/__pycache__/
