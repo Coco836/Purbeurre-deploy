@@ -16,8 +16,8 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
-from store import views
-from account import views
+from purbeurre_project.store import views
+from purbeurre_project.account import views
 
 
 urlpatterns = [
