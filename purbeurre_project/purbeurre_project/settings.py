@@ -36,8 +36,8 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'project-pur-beurre.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'purbeurre_project.store.apps.StoreConfig',
-    'purbeurre_project.account.apps.AccountConfig',
+    'store.apps.StoreConfig',
+    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -59,7 +59,7 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
-ROOT_URLCONF = 'purbeurre_project.purbeurre_project.urls'
+ROOT_URLCONF = 'purbeurre_project.urls'
 
 TEMPLATES = [
     {

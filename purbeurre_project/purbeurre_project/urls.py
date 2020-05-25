@@ -16,14 +16,14 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
-from purbeurre_project.store import views
-from purbeurre_project.account import views
+from store import views
+from account import views
 
 
 urlpatterns = [
     path(r'', views.index, name='home'),
-    path(r'store/', include('purbeurre_project.store.urls')),
-    path(r'account/', include('purbeurre_project.account.urls')),
+    path(r'store/', include('store.urls')),
+    path(r'account/', include('account.urls')),
     path(r'admin/', admin.site.urls),
 ]
 
