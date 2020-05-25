@@ -59,7 +59,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-ROOT_URLCONF = 'purbeurre_project.urls'
+ROOT_URLCONF = 'purbeurre_project.purbeurre_project.urls'
 
 TEMPLATES = [
     {
