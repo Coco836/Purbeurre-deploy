@@ -17,7 +17,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 from store import views
-from account import views
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -25,7 +25,7 @@ urlpatterns = [
     path(r'store/', include('store.urls')),
     path(r'account/', include('account.urls')),
     path(r'admin/', admin.site.urls),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     import debug_toolbar
