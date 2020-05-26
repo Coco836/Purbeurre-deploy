@@ -5,7 +5,6 @@ certifi==2020.4.5.1
 cffi==1.14.0
 chardet==3.0.4
 coverage==5.1
-dj-database-url==0.5.0
 Django==3.0.6
 django-debug-toolbar==2.2
 django-heroku==0.3.1
@@ -27,4 +26,3 @@ selenium==3.141.0
 six==1.14.0
 sqlparse==0.3.1
 urllib3==1.25.9
-whitenoise==5.1.0
