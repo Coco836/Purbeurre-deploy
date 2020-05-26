@@ -22,16 +22,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'l%%!f=+4f9lue2y8+ooq@0o540vp@o9h(t*@(b24i4y4^o@0lg')
+SECRET_KEY = 'l%%!f=+4f9lue2y8+ooq@0o540vp@o9h(t*@(b24i4y4^o@0lg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if os.environ.get('ENV') == 'PRODUCTION':
+if os.environ.get('ENV', "DEVELOPMENT") == 'PRODUCTION':
     DEBUG = False
 else:
     DEBUG = True
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'project-pur-beurre.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapps.com']
 
 
 # Application definition
@@ -143,6 +143,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 INTERNAL_IPS = ['127.0.0.1']
 
