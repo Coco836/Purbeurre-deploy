@@ -146,7 +146,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 INTERNAL_IPS = ['127.0.0.1']
@@ -154,4 +154,4 @@ INTERNAL_IPS = ['127.0.0.1']
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Activate Django-Heroku.
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
