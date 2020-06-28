@@ -7,7 +7,7 @@ services:
   - postgresql
 
 env:
-  - DJANGO=3.0.7 DB=postgresql
+  - DJANGO=3.0.7 DB=django_purbeurre
 
 install:
   - pip install -r requirements.txt
@@ -16,6 +16,4 @@ before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
 
 script:
-  - python manage.py makemigrations
-  - python manage.py migrate
   - python manage.py test
