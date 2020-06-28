@@ -43,14 +43,12 @@
         {% endif %}
     </div>
     <div class='description-subs'>
-        {% if shops %}
         <p>
            <strong>Où trouver ce produit :</strong> 
             {% for shop in shops %} 
-                {{ shop.name }},
+                {{ shop.name }} /
             {% endfor %}
         </p>
-        {% endif %}
     </div>
 
     <div class='box-off'>
