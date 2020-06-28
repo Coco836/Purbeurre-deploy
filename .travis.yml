@@ -11,4 +11,4 @@ env:
   - pip install -q Django==$DJANGO_VERSION
 
 script:
-  - manage.py test
+  - py manage.py test
