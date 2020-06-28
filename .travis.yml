@@ -13,10 +13,9 @@ install:
   - pip install -r requirements.txt
 
 addons:
-  apt:
-    packages:
-      firefox-geckodriver
-      
+  browserstack:
+    username: "firefox"
+
 before_script:
   - wget "https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz"
   - tar xfz geckodriver-v0.24.0-linux64.tar.gz
