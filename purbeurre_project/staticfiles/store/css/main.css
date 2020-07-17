@@ -1,0 +1,588 @@
+header.masthead h1 {
+    font-size: 3.5rem;
+}
+header.masthead h2 {
+    font-size: 2rem;
+}
+@media (min-width: 992px) {
+    header.masthead {
+      height: 100vh;
+      min-height: 40rem;
+      padding-top: 4.5rem;
+      padding-bottom: 0;
+    }
+    header.masthead p {
+      font-size: 1.15rem;
+    }
+    header.masthead h1 {
+      font-size: 3rem;
+    }
+}
+@media (min-width: 1200px) {
+    header.masthead h1 {
+        font-size: 3.5rem;
+        margin-top: 2rem;
+        color:#e2eae7b0;
+    }    
+    header.masthead h2 {
+        font-size: 2rem;
+        margin-top: -6rem;
+        color: #c45525f2;
+    }
+}
+
+.input-group {
+    display: flex;
+    width: 40%;
+    margin-top: -8rem;
+}
+
+img#logo {
+    width: 2rem;
+    height: 2rem;
+}
+
+input#search.form-control {
+    height: 1.5rem;
+    width: 7.5rem;
+    text-align: center;
+    margin-top: -0.4rem;
+    margin-right: 1rem;
+    background-color: #b6bfc7;
+}
+
+#menu-food {
+    width: 2.5rem;
+    height: 2rem;
+    margin-top: -0.7rem;
+    margin-right: 1rem;
+}
+
+#menu-account {
+    width: 1.5rem;
+    height: 2rem;
+    margin-top: -0.7rem;
+    margin-right: 1rem;
+}
+
+#menu-deconnect {
+    width: 2rem;
+    height: 2rem;
+    margin-top: -0.5rem;
+}
+
+#btn-accueil {
+    background-color: rgba(76, 99, 55, 0.411);
+    color: rgba(226, 219, 219, 0.651);
+}
+
+#about h2 {
+    color: rgb(235, 234, 228);
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+section#about.page-section {
+    background-color: #345a6180;
+}
+
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    background: #424e5e2e;;
+    padding: 15px;
+}
+#footer-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+body, html{
+    height:100%;
+}
+
+
+#colette {
+    width: 12rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#remy {
+    width: 12rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.text {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#story {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+#services h2 {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+section#services.page-section {
+    background-color: #f5f5f5;
+}
+
+p#contact-text {
+    text-align: center;
+}
+
+#contact {
+    text-align: center;
+}
+
+#contact-phone, #contact-email {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+svg#contact-phone, svg#contact-email {
+    height: 3rem;
+    width: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+header#sign-up-header, header#valid-header {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background: linear-gradient(to bottom, rgba(66, 79, 92, 0.69) 0%, rgba(66, 77, 92, 0.68) 100%), url(../assets/img/portfolio/account/sign_up_head.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    text-align: center;
+}
+header#sign-up-header h1, header#valid-header h1 {
+    color: #de944082;;
+}
+
+div#signup-container {
+    width: 100%;
+    max-width: 58rem;
+}
+
+div.signup-content {
+    display: flex;
+    width: 100%; 
+    background: white;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+}
+
+div.signup-form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+div.signup-form, div.signup-image {
+    width: 44%;
+    overflow: hidden;
+
+}
+
+div.signup-image {
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: auto;}
+
+div.signup-image img{
+    max-width: 70%;
+    margin: auto;
+    margin-top: 7rem;
+}
+
+form.register-form {
+    width: 100%;
+    padding-bottom: 3rem;
+}
+
+.signup-image-link {
+    font-size: 17px;
+    color: #343a40ba;
+    text-decoration: underline;
+    display: block;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+h2.form-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin: auto;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+.form-group input {
+    width: 94%;
+    border: none;
+    border-bottom: 1px solid #999;
+    padding: 6px 30px;
+    box-sizing: border-box;}
+
+#signup-username, #signup-email, #signup-pass {
+    display: inline-block;
+    font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-size: 18px;
+}
+
+body#page-top {
+    background: #f8f8f8;
+}
+
+input#signup.form-submit {
+    background-color: rgba(154, 179, 197, 0.73);
+    width: auto;
+    border-radius: 17px 17px 17px 17px;
+}
+
+div.signup-validation {
+    width: 100%;
+    text-align: center;
+    background: white;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding: 4rem;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;}
+
+span.error-input, p.error-input {
+    color: #dc3545c7;
+}
+
+div#email-account {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    padding: 0.5rem;
+    margin-top: 2rem;
+    border-radius: 13px 13px 13px 13px;
+    -moz-border-radius: 13px 13px 13px 13px;
+    -webkit-border-radius: 7px 7px 7px 7px;
+    border: 4px solid #9cc7ba;
+}
+div#email-account p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+    font-size: larger;
+}
+
+span.connection-link a {
+    color: #17a2b8;
+}
+
+div.dropdown-menu {
+    left: auto;
+    right: 1rem;
+}
+
+p#result-text {
+    text-align: center;
+    color: #345A61;
+    font-style: italic;
+    font-size: larger;
+}
+
+div#product-box {
+    border: 1px solid #e8a75da6;
+    text-align: center;
+    height: 22rem;
+    width: 18rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+div#product-box img{
+    width: 8rem;
+    max-height: 14rem;
+}
+
+span#prod-name {
+    color: #3a495a;
+    font-weight: bold;
+}
+
+div#product-box img.nutri-grade {
+    width: 2rem;
+}
+div.nutriscore-position {
+    position: absolute;
+    margin-top: -9rem;
+    margin-left: 7.5rem;
+}
+
+ul#categories {
+    text-align: center;
+    list-style-type: none;
+    padding-inline-end: 40px;
+}
+
+div#categories-name {
+    width: fit-content;
+    background: white;
+    padding: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header#name-substitute, header#name-product {
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    background: linear-gradient(to bottom, #121416b0 0%, rgba(15, 18, 20, 0.68) 100%), url(../assets/img/portfolio/account/sign_up_head.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    text-align: center;
+    color: #de944082;;
+}
+
+img#image-header {
+    max-width: 10rem;
+    max-height: 7rem;
+}
+
+img.nutriscore {
+    width: 9rem;
+    height: 5rem;
+}
+
+i#save {
+    width: 1.5rem;
+    height: 2rem;
+    margin-top: -0.7rem;
+    margin-right: 1rem;
+}
+
+img.nutri-grade {
+    width: 2rem;
+}
+
+.pagination {
+    display: inline-block;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+  }
+
+  .pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+nav.page {
+      text-align: center;
+  }
+
+
+button.save-button {
+    background-color: #e8a75da6;
+    color: black;
+    border: 2px solid #f8f8f8; 
+}
+
+@media (max-width: 991px) {
+ #nav-bar-small-screen {
+    display: flex;
+    flex-direction: inherit;
+ }
+}
+
+form.input-group {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    margin-top: 0rem;
+}
+
+@media (max-width: 991px) {
+    form.input-group {
+        width: 61%;
+    }
+}
+
+header.masthead h2 {
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    color: #c45525f2;
+}
+
+header.masthead h1 {
+    margin-top: -3rem;
+    font-size: 3.5rem;
+    color: #e2eae7b0;
+}
+
+@media (max-width: 991px) {
+    header.masthead h1 {
+        margin-top: -3rem;
+        font-size: 2.5rem;
+        color: #e2eae7b0;
+    }
+}
+
+@media (max-width: 991px) {
+    header.masthead h2 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: 1.2rem;
+        color: rgba(181, 244, 58, 0.54);
+    }
+}
+
+div.block-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+div.block2 {
+    width: 11rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+div.box-off {
+    margin-top: 3rem;
+    width: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.box-off p {
+    padding: 0.4rem;
+    border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    border: 1.5px solid #2525264a;
+    color: #212529;
+    background-color: #939fb14a;
+    font-size: larger;
+}
+
+div.description-subs {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#footer-section div a {
+    color: #6c757d !important;
+}
+
+header#mention-header {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background: linear-gradient(to bottom, rgba(66, 79, 92, 0.69) 0%, rgba(66, 77, 92, 0.68) 100%), url(../assets/img/portfolio/account/sign_up_head.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    text-align: center;
+}
+header#mention-header h1 {
+    color: #de944082;
+}
+
+@media (max-width: 992px) {
+    header#mention-header {
+        padding-top: 6rem;
+        padding-bottom: 2rem;
+    }
+}
+
+div#mention-container {
+    width: 100%;
+    max-width: 58rem;
+}
+    
+div.mention-content {
+    display: flex;
+    width: 100%;
+    background: white;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+}
+
+p#mention-style {
+    margin: 3rem;
+}
+
+
+p#mention-style span {
+    color: #345A61;
+}
+
+@media (max-width: 992px) {
+    p#mention-style {
+        margin: 1rem;
+    }
+}
+
+svg#menu-account, li a.aliment svg, li a.deconnection svg {
+    color: #c45525ab
+}
