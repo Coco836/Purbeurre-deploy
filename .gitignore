@@ -8,3 +8,5 @@ purbeurre_project/purbeurre_project/account/migrations/__pycache__/
 geckodriver.log
 .coverage
 db.sqlite3
+__pycache__
+latest.dump
